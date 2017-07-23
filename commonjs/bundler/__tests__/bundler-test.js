@@ -20,7 +20,7 @@ describe('bundler', () => {
     });
 
     const source = bundler.bundle('/project/index.js');
-    eval(source);
+      eval(source);
   });
 
   it('multiple requires', () => {
