@@ -4,8 +4,9 @@ const fs = require('fs');
 function resolve(from, to) {
   let final;
   let to_file;
-  console.log('to is:', from);
+  // console.log('to is:', to);
   if (to.split('/').length > 1) {
+    // console.log('after split');
     if (path.dirname(to) === '.') {
       to_file = `${path.basename(to)}.js`;
       final = path.join(path.dirname(from), to_file);
@@ -18,6 +19,7 @@ function resolve(from, to) {
     final = path.join(final, path.basename(to), 'index.js');
   }
   if (fs.existsSync(final)) {
+    // console.log('final is: ', final);
     return final
   } else {
     throw new Error('file not found')
